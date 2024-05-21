@@ -8,31 +8,32 @@
         <link rel="stylesheet" href="./assets/css/form.css">
     </head>
     <body>
-        <header>
+        <div class="container dark">
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" id="theme-switcher">
                 <span class="slider round"></span>
             </label>
-            <p>Dark Mode</p>
-        </header>
-        <main>
-            <form class="form">
-                <ul>
-                    <li>
-                        <label for="username">Username:</label><br>
-                        <textarea id="username" name="username"></textarea>
-                    </li>
-                    <li>
-                        <label for="title">Title:</label><br>
-                        <textarea id="title" name="title"></textarea>
-                    </li>
-                    <li>
-                        <label for="contnet">Content:</label><br>
-                        <textarea id="content" name="content"></textarea>
-                    </li>
-                </ul>
-            </form>
-        </main>
+            <p>Dark/Light Mode</p>
+            <card class = "form">
+                <h2>Blog Post Form</h2>
+                <form>
+                    <ul>
+                        <li>
+                            <label for="username">Username:</label><br>
+                            <textarea id="username" name="username"></textarea>
+                        </li>
+                        <li>
+                            <label for="title">Title:</label><br>
+                            <textarea id="title" name="title"></textarea>
+                        </li>
+                        <li>
+                            <label for="contnet">Content:</label><br>
+                            <textarea id="content" name="content"></textarea>
+                        </li>
+                    </ul>
+                </form>
+            </card>
+        </div>
         <script src="./assets/js/form.js"></script>
     </body>
 </html>
