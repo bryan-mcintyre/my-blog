@@ -1,3 +1,15 @@
+body {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+
+div {
+    padding-top: 10px;
+    text-align: center;
+}
+
 /* Dark & Light styles + Toggle style */
 
 /* Dark Mode */

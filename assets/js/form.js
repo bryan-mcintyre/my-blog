@@ -18,3 +18,22 @@ themeSwitcher.addEventListener('click', function() {
         container.setAttribute('class', 'dark')
     }
 })
+
+// Form
+const username = document.getElementById('username')
+const title = document.getElementById('title')
+const content = document.getElementById('content')
+const submitButton = document.getElementById('submit')
+
+submitButton.addEventListener('click', function () {
+
+    const blogPost = {
+        username: username.value,
+        title: title.value,
+        content: content.value.trim(),
+    }
+    
+    localStorage.setItem('blogPost', JSON.stringify(blogPost))
+
+})
+

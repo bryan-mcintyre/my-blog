@@ -5,8 +5,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Blog</title>
         <link rel="stylesheet" href="./assets/css/blog.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
     </head>
     <body>
+        <div class="container dark">
+            <label class="switch">
+                <input type="checkbox" id="theme-switcher">
+                <span class="slider round"></span>
+            </label>
+            <p>Dark/Light Mode</p>
+            <button id="back"><a href="./index.html">Back</a></button>
+
+            <h1>Blog Posts</h1>
+            <section>
+                <div class="card">
+                    <h2>Username</h2>
+                    <p class="display">
+                        <span id="saved-username"></span>
+                    </p>
+                    <h2>Title</h2>
+                    <p class="display">
+                        <span id="saved-title"></span>
+                    </p>
+                    <h3>Content</h3>
+                    <p class="display">
+                        <span id="saved-content"></span>
+                    </p>
+                </div>
+            </section>
+        <script src="/assets/js/form.js"></script>
         <script src="./assets/js/blog.js"></script>
     </body>
 </html>
