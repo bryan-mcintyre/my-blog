@@ -1,12 +1,29 @@
 function renderBlogPost() {
     // parse .JSON string to JS object
-    let newBlogPost = JSON.parse(localStorage.getItem('blogPost'))
+    let blogPosts = JSON.parse(localStorage.getItem('blogPost'))
 
-    document.getElementById('saved-username').innerHTML = newBlogPost.username
-    document.getElementById('saved-title').innerHTML = newBlogPost.title
-    document.getElementById('saved-content').innerHTML = newBlogPost.content
-
-    
+    for (let i = 0; i < blogPosts.length; i++) {
+        document.getElementById('blog-container').innerHTML +=
+            `<div class="card">
+    <h2>Username</h2>
+    <p class="display">
+        <span id="saved-username">${blogPosts[i].username}</span>
+    </p>
+    <h2>Title</h2>
+    <p class="display">
+        <span id="saved-title">${blogPosts[i].title}</span>
+    </p>
+    <h3>Content</h3>
+    <p class="display">
+        <span id="saved-content">${blogPosts[i].content}</span>
+    </p>
+</div>`
+    }
 }
 
 renderBlogPost()
+
+// function init() {
+//     renderBlogPost()
+// }
+// init()

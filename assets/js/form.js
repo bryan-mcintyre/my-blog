@@ -26,32 +26,41 @@ let content = document.getElementById('content')
 let submitButton = document.getElementById('submit')
 
 function saveBlogPost () {
+
+    let blogPosts = JSON.parse(localStorage.getItem('blogPost'))
+
+    if (!blogPosts) {
+        blogPosts = []
+    }
+
     let blogPost = {
         username: username.value,
         title: title.value,
-        content: content.value.trim(),
+        content: content.value,
     }
-    localStorage.setItem('blogPost', JSON.stringify(blogPost))
+
+    blogPosts.push(blogPost)
+    localStorage.setItem('blogPost', JSON.stringify(blogPosts))
 }
 
-function renderBlogPost() {
-    let lastPost = JSON.parse(localStorage.getItem('blogPost'))
+    
+// function renderBlogPost() {
+//     let lastPost = JSON.parse(localStorage.getItem('blogPost'))
+    
+//         document.getElementById('saved-username').innerHTML = lastPost.username
+//         document.getElementById('saved-title').innerHTML = lastPost.title
+//         document.getElementById('saved-content').innerHTML = lastPost.content
+// }
 
-    if (lastPost !== null) {
-        document.getElementById('saved-username').innerHTML = lastPost.username
-        document.getElementById('saved-title').innerHTML = lastPost.title
-        document.getElementById('saved-content').innerHTML = lastPost.content
-    }
-}
-
-submitButton.addEventListener('click', function () {
+submitButton.addEventListener('click', function (event) {
+    event.preventDefault()
     saveBlogPost()
-    renderBlogPost()
+    // renderBlogPost()
 })
 
-function init() {
-    renderBlogPost()
-}
-init()
+// function init() {
+//     renderBlogPost()
+// }
+// init()
 
 

@@ -10,12 +10,17 @@ div {
     text-align: center;
 }
 
+#blog-container {
+    height: auto;
+    border: solid black
+}
+
 /* Dark & Light styles + Toggle style */
 
 /* Dark Mode */
 .dark {
     background-color: rgba(62, 60, 66, 0.888);
-    height: 100vh;
+    min-height: 100vh;
     color: #bebebe;
 }
 
@@ -23,7 +28,7 @@ div {
 .light {
     background-color: white;
     color: black;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 /* Switch button style */
