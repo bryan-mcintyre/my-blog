@@ -1,9 +1,12 @@
 function renderBlogPost() {
     // parse .JSON string to JS object
-    const blogPost = JSON.parse(localStorage.getItem('blogPost'))
+    let newBlogPost = JSON.parse(localStorage.getItem('blogPost'))
 
-    if (blogPost !== null) {
-        document.getElementById('saved-username').innerHTML = blogPost.username
+    document.getElementById('saved-username').innerHTML = newBlogPost.username
+    document.getElementById('saved-title').innerHTML = newBlogPost.title
+    document.getElementById('saved-content').innerHTML = newBlogPost.content
 
-    }
+    
 }
+
+renderBlogPost()

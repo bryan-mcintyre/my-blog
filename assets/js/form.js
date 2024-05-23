@@ -20,20 +20,38 @@ themeSwitcher.addEventListener('click', function() {
 })
 
 // Form
-const username = document.getElementById('username')
-const title = document.getElementById('title')
-const content = document.getElementById('content')
-const submitButton = document.getElementById('submit')
+let username = document.getElementById('username')
+let title = document.getElementById('title')
+let content = document.getElementById('content')
+let submitButton = document.getElementById('submit')
 
-submitButton.addEventListener('click', function () {
-
-    const blogPost = {
+function saveBlogPost () {
+    let blogPost = {
         username: username.value,
         title: title.value,
         content: content.value.trim(),
     }
-    
     localStorage.setItem('blogPost', JSON.stringify(blogPost))
+}
 
+function renderBlogPost() {
+    let lastPost = JSON.parse(localStorage.getItem('blogPost'))
+
+    if (lastPost !== null) {
+        document.getElementById('saved-username').innerHTML = lastPost.username
+        document.getElementById('saved-title').innerHTML = lastPost.title
+        document.getElementById('saved-content').innerHTML = lastPost.content
+    }
+}
+
+submitButton.addEventListener('click', function () {
+    saveBlogPost()
+    renderBlogPost()
 })
+
+function init() {
+    renderBlogPost()
+}
+init()
+
 
